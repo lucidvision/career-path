@@ -1,37 +1,22 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Button, TextInput, StyleSheet, Text, View } from 'react-native'
 
-class CareersScreen extends Component {
-  static navigationOptions = ({ navigation }) => {
-    const { params } = navigation.state
-    return {
-      title: params.name
-    }
-  }
+class Careers extends Component {
   static propTypes = {}
   state = {}
-  handleJobPressed = (job) => {
-    this.props.navigation.navigate('Job', job)
+  handleCategoriesPressed = () => {
+    this.props.navigation.navigate('CategoriesList')
   }
-  renderItem = ({item}) => {
-    return (
-      <TouchableOpacity onPress={() => this.handleCategoryPressed(item)}>
-        <View style={styles.container}>
-          <Text>
-            {item.name}
-          </Text>
-        </View>
-      </TouchableOpacity>
-    )
+  handleFilterPressed = () => {
+    this.props.navigation.navigate('Filter')
   }
   render () {
     return (
       <View style={styles.container}>
-        <FlatList
-          data={this.props.navigation.state.params.jobs}
-          renderItem={this.renderItem}
-          keyExtractor={(item) => item.name} />
+        <TextInput placeholder='Search' />
+        <Button onPress={this.handleCategoriesPressed} title='Categories' />
+        <Button onPress={this.handleFilterPressed} title='Filter' />
       </View>
     )
   }
@@ -40,13 +25,8 @@ class CareersScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 22
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44
+    justifyContent: 'space-around'
   }
 })
 
-export default CareersScreen
+export default Careers

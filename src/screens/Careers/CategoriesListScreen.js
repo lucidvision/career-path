@@ -2,25 +2,25 @@ import React, { Component } from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import jobs from 'data/jobs'
 
-class CategoriesScreen extends Component {
-  state = {}
+class CategoriesListScreen extends Component {
+  static navigationOptions = {
+    title: 'Categories'
+  }
   handleCategoryPressed = (category) => {
-    this.props.navigation.navigate('Careers', category)
+    this.props.navigation.navigate('CareersList', category)
   }
   renderItem = ({item}) => {
     return (
       <TouchableOpacity onPress={() => this.handleCategoryPressed(item)}>
-        <View style={styles.container}>
-          <Text>
-            {item.name}
-          </Text>
+        <View style={styles.item}>
+          <Text>{item.name}</Text>
         </View>
       </TouchableOpacity>
     )
   }
   render () {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
         <FlatList
           data={jobs}
           renderItem={this.renderItem}
@@ -32,6 +32,9 @@ class CategoriesScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  item: {
     height: 100,
     backgroundColor: 'grey',
     padding: 10,
@@ -39,4 +42,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default CategoriesScreen
+export default CategoriesListScreen

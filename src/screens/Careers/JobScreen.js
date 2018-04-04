@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Text, View } from 'react-native'
 
 class JobScreen extends Component {
-  static propTypes = {}
-  state = {}
   render () {
+    const { params } = this.props.navigation.state
     return (
       <View>
-        <Text>
-          JobScreen
-        </Text>
+        <Text>{params.name}</Text>
+        <Text>{`Salary: ${params.salary}`}</Text>
+        <Text>{`Education: ${params.education}`}</Text>
       </View>
     )
   }

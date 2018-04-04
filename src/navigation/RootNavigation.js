@@ -1,12 +1,19 @@
 import { StackNavigator, TabNavigator } from 'react-navigation'
-import { CategoriesScreen, CareersScreen, JobScreen, AssessmentScreen, QuestionnaireScreen } from 'screens'
+import { AssessmentScreen, CategoriesListScreen, CareersScreen, CareersListScreen, FilterScreen, JobScreen,
+  QuestionnaireScreen } from 'screens'
 
 const CareersStack = StackNavigator({
-  Categories: {
-    screen: CategoriesScreen
-  },
   Careers: {
     screen: CareersScreen
+  },
+  CategoriesList: {
+    screen: CategoriesListScreen
+  },
+  CareersList: {
+    screen: CareersListScreen
+  },
+  Filter: {
+    screen: FilterScreen
   },
   Job: {
     screen: JobScreen
