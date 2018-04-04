@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Button, TextInput, StyleSheet, Text, View } from 'react-native'
+import { Button, TextInput, StyleSheet, View } from 'react-native'
 
 class Careers extends Component {
-  static propTypes = {}
   state = {}
   handleCategoriesPressed = () => {
     this.props.navigation.navigate('CategoriesList')

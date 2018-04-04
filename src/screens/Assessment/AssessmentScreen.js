@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Button, View } from 'react-native'
 
 class AssessmentScreen extends Component {
   state = {}
+  handleAssessmentPressed = () => {
+    this.props.navigation.navigate('Questionnaire')
+  }
   render () {
     return (
       <View>
-        <Text>
-          AssessmentScreen
-        </Text>
+        <Button onPress={this.handleAssessmentPressed} title='Start Assessment' />
       </View>
     )
   }
