@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Button, TextInput, StyleSheet, View } from 'react-native'
+import { Button, StyleSheet, View } from 'react-native'
+import Search from 'components/Search'
+import jobs from 'data/jobs'
 
 class Careers extends Component {
   state = {}
@@ -9,10 +11,13 @@ class Careers extends Component {
   handleFilterPressed = () => {
     this.props.navigation.navigate('Filter')
   }
+  handleJobPressed = (job) => {
+    this.props.navigation.navigate('Job', job)
+  }
   render () {
     return (
       <View style={styles.container}>
-        <TextInput placeholder='Search' />
+        <Search data={jobs[0].jobs} onItemPressed={this.handleJobPressed} />
         <Button onPress={this.handleCategoriesPressed} title='Categories' />
         <Button onPress={this.handleFilterPressed} title='Filter' />
       </View>

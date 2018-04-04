@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import jobs from 'data/jobs'
+import _ from 'lodash'
 
 class CategoriesListScreen extends Component {
   static navigationOptions = {
