@@ -1,4 +1,6 @@
+import React from 'React'
 import { StackNavigator, TabNavigator } from 'react-navigation'
+import { Ionicons } from '@expo/vector-icons'
 import { AssessmentScreen, CategoriesListScreen, CareersScreen, CareersListScreen, FilterScreen, JobScreen,
   QuestionnaireScreen } from 'screens'
 
@@ -29,19 +31,35 @@ const AssessmentStack = StackNavigator({
   }
 })
 
-const RootNavigation = TabNavigator({
-  Careers: {
-    screen: CareersStack,
-    navigationOptions: {
-      tabBarLabel: 'Careers'
+const RootNavigation = TabNavigator(
+  {
+    Careers: {
+      screen: CareersStack,
+      navigationOptions: {
+        tabBarLabel: 'Careers'
+      }
+    },
+    Assessment: {
+      screen: AssessmentStack,
+      navigationOptions: {
+        tabBarLabel: 'Assessment'
+      }
     }
   },
-  Assessment: {
-    screen: AssessmentStack,
-    navigationOptions: {
-      tabBarLabel: 'Assessment'
-    }
+  {
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => {
+        const { routeName } = navigation.state
+        let iconName
+        if (routeName === 'Careers') {
+          iconName = `ios-briefcase${focused ? '' : '-outline'}`
+        } else if (routeName === 'Assessment') {
+          iconName = `ios-document${focused ? '' : '-outline'}`
+        }
+        return <Ionicons name={iconName} size={25} color={tintColor} />
+      }
+    })
   }
-})
+)
 
 export default RootNavigation

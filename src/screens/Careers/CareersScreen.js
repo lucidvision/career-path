@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, StyleSheet, View } from 'react-native'
 import Search from 'components/Search'
 import jobs from 'data/jobs'
+import _ from 'lodash'
 
 class Careers extends Component {
   state = {}
@@ -17,7 +18,7 @@ class Careers extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Search data={jobs[0].jobs} onItemPressed={this.handleJobPressed} />
+        <Search data={_.reduce(jobs, (acc, category) => _.concat(acc, category.jobs))} onItemPressed={this.handleJobPressed} />
         <Button onPress={this.handleCategoriesPressed} title='Categories' />
         <Button onPress={this.handleFilterPressed} title='Filter' />
       </View>
