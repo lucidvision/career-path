@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import jobs from 'data/jobs'
-import _ from 'lodash'
 
 class CategoriesListScreen extends Component {
   static navigationOptions = {
     title: 'Categories'
   }
-  handleCategoryPressed = ({jobs}) => {
-    this.props.navigation.navigate('CareersList', {jobs})
+  handleCategoryPressed = (jobs) => {
+    this.props.navigation.navigate('CareersList', jobs)
   }
   renderItem = ({item}) => {
     return (
@@ -36,10 +35,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   item: {
-    height: 100,
     backgroundColor: 'grey',
-    padding: 10,
-    justifyContent: 'center'
+    height: 100,
+    justifyContent: 'center',
+    padding: 10
   }
 })
 

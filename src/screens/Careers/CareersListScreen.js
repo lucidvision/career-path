@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   item: {
-    height: 100,
     backgroundColor: 'grey',
-    padding: 10,
-    justifyContent: 'center'
+    height: 100,
+    justifyContent: 'center',
+    padding: 10
   }
 })
 

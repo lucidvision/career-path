@@ -10,12 +10,24 @@ class FilterScreen extends Component {
     educationLevel: ''
   }
   handleFilterPressed = () => {
-    const results = _.filter(jobs, job => {
-      const { salary, education } = job
-      const { minSalary, maxSalary, educationLevel } = this.state
-      return +salary > +minSalary && +salary < +maxSalary && education === educationLevel
-    })
-    this.props.navigation.navigate('CareersList', {jobs: results})
+    const { minSalary, maxSalary, educationLevel } = this.state
+    if (minSalary || maxSalary || educationLevel) {
+      const results = _.filter(jobs, job => {
+        const { salary, education } = job
+        let keep = true
+        if (minSalary && +salary < +minSalary) {
+          keep = false
+        }
+        if (maxSalary && +salary > +maxSalary) {
+          keep = false
+        }
+        if (educationLevel && !education === educationLevel) {
+          keep = false
+        }
+        return keep
+      })
+      this.props.navigation.navigate('CareersList', {name: 'Results', jobs: results})
+    }
   }
   render () {
     return (

@@ -35,7 +35,7 @@ class SearchInput extends Component {
   }
   renderItem = ({item}) => {
     return (
-      <TouchableOpacity onPress={() => this.props.onItemPressed(item)} style={styles.listItem}>
+      <TouchableOpacity onPress={() => this.handleItemPressed(item)} style={styles.listItem}>
         <Text>{item.name}</Text>
       </TouchableOpacity>
     )
@@ -62,29 +62,30 @@ class SearchInput extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'white',
+    borderColor: '#d6d7da',
     borderRadius: 4,
     borderWidth: 0.5,
-    borderColor: '#d6d7da',
     padding: 10,
-    zIndex: 1,
-    backgroundColor: 'white'
+    width: '100%',
+    zIndex: 1
   },
   input: {
     fontSize: 20
   },
   list: {
+    backgroundColor: 'white',
     flex: 1,
-    position: 'absolute',
-    top: 50,
     left: 0,
+    position: 'absolute',
     right: 0,
-    backgroundColor: 'white'
+    top: 50
   },
   listItem: {
-    height: 40,
-    padding: 10,
     borderBottomWidth: 0.5,
-    borderColor: '#d6d7da'
+    borderColor: '#d6d7da',
+    height: 40,
+    padding: 10
   }
 })
 
