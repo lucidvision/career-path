@@ -13,13 +13,14 @@ IconButton.defaultProps = {
 }
 
 export default function IconButton (props) {
+  const { children, title, ...rest } = props
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       style={styles.button}
-      {...props}>
-      {props.children}
-      <Text>{props.title}</Text>
+      {...rest}>
+      {children}
+      <Text>{title}</Text>
     </TouchableOpacity>
   )
 }

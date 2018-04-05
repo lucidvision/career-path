@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { AnswerButton } from 'components'
 
 const questions = [
   'Do you like people?',
@@ -22,19 +23,42 @@ class QuestionnaireScreen extends Component {
   }
   render () {
     return (
-      <View>
-        <Text>{questions[this.state.currentQuestion]}</Text>
+      <View style={styles.container}>
+        <Text style={[styles.text, styles.verticleSpacing]}>{questions[this.state.currentQuestion]}</Text>
         <View>
-          <Button title='Agree' onPress={() => this.handleAnswerPressed(1)} />
-          <Button title='Neutral' onPress={() => this.handleAnswerPressed(2)} />
-          <Button title='Disagree' onPress={() => this.handleAnswerPressed(3)} />
+          <AnswerButton
+            addStyle={styles.verticleSpacing}
+            onPress={() => this.handleAnswerPressed(1)}
+            title='Agree' />
+          <AnswerButton
+            addStyle={styles.verticleSpacing}
+            onPress={() => this.handleAnswerPressed(2)}
+            title='Neutral' />
+          <AnswerButton
+            addStyle={styles.verticleSpacing}
+            onPress={() => this.handleAnswerPressed(3)}
+            title='Disagree' />
         </View>
-        <View>
-          <Text>Questions Left: {questions.length - this.state.currentQuestion}</Text>
+        <View style={styles.verticleSpacing}>
+          <Text style={styles.text}>Questions Left: {questions.length - this.state.currentQuestion}</Text>
         </View>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 10
+  },
+  verticleSpacing: {
+    marginBottom: 20
+  },
+  text: {
+    textAlign: 'center'
+  }
+})
 
 export default QuestionnaireScreen
