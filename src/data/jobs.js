@@ -6,18 +6,21 @@ const categories = [
     jobs: [
       {
         name: 'Doctor',
-        salary: '100000',
-        education: 'MD'
+        salary: 100000,
+        education: 'MD',
+        score: 2
       },
       {
         name: 'Nurse',
-        salary: '50000',
-        education: 'Bachelors'
+        salary: 50000,
+        education: 'Bachelors',
+        score: 1
       },
       {
         name: 'Therapist',
         salary: '50000',
-        education: 'Bachelors'
+        education: 'Bachelors',
+        score: 0
       }
     ]
   },
@@ -26,18 +29,21 @@ const categories = [
     jobs: [
       {
         name: 'Tour Guide',
-        salary: '30000',
-        education: 'MD'
+        salary: 30000,
+        education: 'High School',
+        score: 0
       },
       {
         name: 'Agent',
-        salary: '50000',
-        education: 'Bachelors'
+        salary: 50000,
+        education: 'Bachelors',
+        score: 0
       },
       {
         name: 'Hotel Manager',
-        salary: '80000',
-        education: 'Bachelors'
+        salary: 80000,
+        education: 'Bachelors',
+        score: 1
       }
     ]
   }

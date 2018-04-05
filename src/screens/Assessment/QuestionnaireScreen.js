@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Alert, AsyncStorage, StyleSheet, Text, View } from 'react-native'
 import { AnswerButton } from 'components'
+import { jobs } from 'data/jobs'
+import _ from 'lodash'
 
 const questions = [
   'Do you like people?',
@@ -20,6 +22,24 @@ class QuestionnaireScreen extends Component {
       currentQuestion,
       answeredQuestions
     })
+    if (currentQuestion === questions.length) {
+      this.handleCalculateResult(answeredQuestions)
+    }
+  }
+  handleCalculateResult = async (answeredQuestions) => {
+    const result = _.reduce(jobs, (acc, job) => {
+      if (answeredQuestions[job.score] === 1) {
+        acc.push(job)
+      }
+      return acc
+    }, [])
+    const resultString = JSON.stringify(result)
+    try {
+      await AsyncStorage.setItem('assessmentResult', resultString)
+    } catch (error) {
+      Alert(error)
+    }
+    this.props.navigation.navigate('Result', {name: 'Results', jobs: result})
   }
   render () {
     return (

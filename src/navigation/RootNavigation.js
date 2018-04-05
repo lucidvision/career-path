@@ -1,8 +1,15 @@
 import React from 'React'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons'
-import { AssessmentScreen, CategoriesListScreen, CareersScreen, CareersListScreen, FilterScreen, JobScreen,
-  QuestionnaireScreen } from 'screens'
+import {
+  AssessmentScreen,
+  CategoriesListScreen,
+  CareersScreen,
+  CareersListScreen,
+  FilterScreen,
+  JobScreen,
+  QuestionnaireScreen
+} from 'screens'
 
 const CareersStack = StackNavigator({
   Careers: {
@@ -28,6 +35,9 @@ const AssessmentStack = StackNavigator({
   },
   Questionnaire: {
     screen: QuestionnaireScreen
+  },
+  Result: {
+    screen: CareersListScreen
   }
 })
 
