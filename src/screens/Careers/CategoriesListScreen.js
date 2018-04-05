@@ -7,8 +7,8 @@ class CategoriesListScreen extends Component {
   static navigationOptions = {
     title: 'Categories'
   }
-  handleCategoryPressed = (category) => {
-    this.props.navigation.navigate('CareersList', category)
+  handleCategoryPressed = ({jobs}) => {
+    this.props.navigation.navigate('CareersList', {jobs})
   }
   renderItem = ({item}) => {
     return (

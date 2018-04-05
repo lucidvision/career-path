@@ -65,7 +65,9 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 0.5,
     borderColor: '#d6d7da',
-    padding: 10
+    padding: 10,
+    zIndex: 1,
+    backgroundColor: 'white'
   },
   input: {
     fontSize: 20
@@ -75,7 +77,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 50,
     left: 0,
-    right: 0
+    right: 0,
+    backgroundColor: 'white'
   },
   listItem: {
     height: 40,
