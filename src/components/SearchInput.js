@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'r
 import Fuse from 'fuse.js'
 import _ from 'lodash'
 
-class Search extends Component {
+class SearchInput extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     onItemPressed: PropTypes.func.isRequired
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Search
+export default SearchInput

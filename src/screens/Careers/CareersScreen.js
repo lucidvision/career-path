@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, StyleSheet, View } from 'react-native'
-import Search from 'components/Search'
+import { SearchInput } from 'components'
 import { jobs } from 'data/jobs'
 
 class Careers extends Component {
@@ -17,7 +17,7 @@ class Careers extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Search data={jobs} onItemPressed={this.handleJobPressed} />
+        <SearchInput data={jobs} onItemPressed={this.handleJobPressed} />
         <Button onPress={this.handleCategoriesPressed} title='Categories' />
         <Button onPress={this.handleFilterPressed} title='Filter' />
       </View>
