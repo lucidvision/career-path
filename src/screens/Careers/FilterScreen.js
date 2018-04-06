@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
-import { Button, Text, TextInput, View } from 'react-native'
+import { Picker, StyleSheet, Slider, Text, TextInput, View } from 'react-native'
+import { IconButton } from 'components'
+import { Feather } from '@expo/vector-icons'
 import { jobs } from 'data/jobs'
 import _ from 'lodash'
 
 class FilterScreen extends Component {
   state = {
-    minSalary: '',
-    maxSalary: '',
-    educationLevel: ''
+    minSalary: 0,
+    maxSalary: 0,
+    education: 'Bachelors'
   }
   handleFilterPressed = () => {
-    const { minSalary, maxSalary, educationLevel } = this.state
-    if (minSalary || maxSalary || educationLevel) {
+    const { minSalary, maxSalary, education } = this.state
+    if (minSalary || maxSalary || education) {
       const results = _.filter(jobs, job => {
-        const { salary, education } = job
+        const { salary, educationRequired } = job
         let keep = true
         if (minSalary && +salary < +minSalary) {
           keep = false
@@ -21,7 +23,7 @@ class FilterScreen extends Component {
         if (maxSalary && +salary > +maxSalary) {
           keep = false
         }
-        if (educationLevel && !education === educationLevel) {
+        if (education && !(education === educationRequired)) {
           keep = false
         }
         return keep
@@ -31,29 +33,59 @@ class FilterScreen extends Component {
   }
   render () {
     return (
-      <View>
-        <View>
-          <Text>Salary Range</Text>
-          <TextInput
-            onChangeText={minSalary => this.setState({minSalary})}
-            placeholder='Minimum'
-            value={this.state.minSalary} />
-          <TextInput
-            onChangeText={maxSalary => this.setState({maxSalary})}
-            placeholder='Maximum'
-            value={this.state.maxSalary} />
-        </View>
-        <View>
-          <Text>Education</Text>
-          <TextInput
-            onChangeText={educationLevel => this.setState({educationLevel})}
-            placeholder='Type'
-            value={this.state.educationLevel} />
-        </View>
-        <Button onPress={this.handleFilterPressed} title='Filter' />
+      <View style={styles.container}>
+        <Text style={styles.verticleSpacing}>Minimum Salary</Text>
+        <Slider
+          maximumValue={100000}
+          minimumValue={10000}
+          onValueChange={minSalary => this.setState({minSalary})}
+          step={1000}
+          style={styles.slider}
+          value={this.state.minSalary} />
+        <Text style={styles.verticleSpacing}>{this.state.minSalary}</Text>
+        <Text style={styles.verticleSpacing}>Maximum Salary</Text>
+        <Slider
+          maximumValue={100000}
+          minimumValue={10000}
+          onValueChange={maxSalary => this.setState({maxSalary})}
+          step={1000}
+          style={styles.slider}
+          value={this.state.maxSalary} />
+        <Text style={styles.verticleSpacing}>{this.state.maxSalary}</Text>
+        <Text>Education</Text>
+        <Picker
+          style={styles.picker}
+          selectedValue={this.state.education}
+          onValueChange={education => this.setState({education})}>
+          <Picker.Item label='High School' value='High School' />
+          <Picker.Item label='Bachelors' value='Bachelors' />
+          <Picker.Item label='Masters' value='Masters' />
+          <Picker.Item label='PhD' value='PhD' />
+        </Picker>
+        <IconButton onPress={this.handleFilterPressed} title='Filter'>
+          <Feather name='filter' size={25} />
+        </IconButton>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    padding: 10
+  },
+  picker: {
+    width: '100%'
+  },
+  slider: {
+    width: '100%'
+  },
+  verticleSpacing: {
+    marginBottom: 20
+  }
+})
 
 export default FilterScreen

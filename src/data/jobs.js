@@ -7,19 +7,19 @@ const categories = [
       {
         name: 'Doctor',
         salary: 100000,
-        education: 'MD',
+        educationRequired: 'MD',
         score: 2
       },
       {
         name: 'Nurse',
         salary: 50000,
-        education: 'Bachelors',
+        educationRequired: 'Bachelors',
         score: 1
       },
       {
         name: 'Therapist',
         salary: '50000',
-        education: 'Bachelors',
+        educationRequired: 'Bachelors',
         score: 0
       }
     ]
@@ -30,19 +30,19 @@ const categories = [
       {
         name: 'Tour Guide',
         salary: 30000,
-        education: 'High School',
+        educationRequired: 'High School',
         score: 0
       },
       {
         name: 'Agent',
         salary: 50000,
-        education: 'Bachelors',
+        educationRequired: 'Bachelors',
         score: 0
       },
       {
         name: 'Hotel Manager',
         salary: 80000,
-        education: 'Bachelors',
+        educationRequired: 'Bachelors',
         score: 1
       }
     ]

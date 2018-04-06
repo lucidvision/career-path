@@ -20,7 +20,7 @@ class AssessmentScreen extends Component {
     }
   }
   handleResultPressed = () => {
-    this.props.navigation.navigate('Result', {name: 'Results', jobs: this.state.result})
+    this.props.navigation.navigate('Result', {name: 'Results', jobs: this.props.assessment})
   }
   handleAssessmentPressed = () => {
     this.props.navigation.navigate('Questionnaire')
