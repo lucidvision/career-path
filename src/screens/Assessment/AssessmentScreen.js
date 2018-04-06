@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
 import { Alert, AsyncStorage, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { IconButton } from 'components'
+import { connect } from 'react-redux'
 import { Entypo } from '@expo/vector-icons'
+import { IconButton } from 'components'
+import { setAssessment } from 'redux/assessments'
 import _ from 'lodash'
 
 class AssessmentScreen extends Component {
   static navigationOptions = {
     title: 'Career Path'
   }
-  state = {
-    result: []
-  }
   async componentDidMount () {
     try {
       const result = await AsyncStorage.getItem('assessmentResult')
       const resultArray = JSON.parse(result)
-      this.setState({
-        result: resultArray
-      })
+      this.props.dispatch(setAssessment(resultArray))
     } catch (error) {
       Alert(error)
     }
@@ -31,9 +28,9 @@ class AssessmentScreen extends Component {
   render () {
     return (
       <View style={styles.container}>
-        {!_.isEmpty(this.state.result) &&
+        {!_.isEmpty(this.props.assessment) &&
           <TouchableOpacity onPress={this.handleResultPressed} style={styles.card}>
-            <Text>{`You have ${this.state.result.length} job matches!`}</Text>
+            <Text>{`You have ${this.props.assessment.length} job matches!`}</Text>
           </TouchableOpacity>}
         <IconButton onPress={this.handleAssessmentPressed} title='Start'>
           <Entypo name='text-document' size={25} />
@@ -58,4 +55,10 @@ const styles = StyleSheet.create({
   }
 })
 
-export default AssessmentScreen
+function mapStateToProps (state) {
+  return {
+    assessment: state.assessment
+  }
+}
+
+export default connect(mapStateToProps)(AssessmentScreen)

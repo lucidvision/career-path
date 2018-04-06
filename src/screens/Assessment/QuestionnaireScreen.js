@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Alert, AsyncStorage, StyleSheet, Text, View } from 'react-native'
+import { connect } from 'react-redux'
 import { AnswerButton } from 'components'
+import { setAssessment } from 'redux/assessments'
 import { jobs } from 'data/jobs'
 import _ from 'lodash'
 
@@ -39,6 +41,7 @@ class QuestionnaireScreen extends Component {
     } catch (error) {
       Alert(error)
     }
+    this.props.dispatch(setAssessment(result))
     this.props.navigation.navigate('Result', {name: 'Results', jobs: result})
   }
   render () {
@@ -81,4 +84,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default QuestionnaireScreen
+export default connect()(QuestionnaireScreen)
