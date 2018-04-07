@@ -13,6 +13,9 @@ const questions = [
 ]
 
 class QuestionnaireScreen extends Component {
+  static navigationOptions = {
+    title: 'Questionnaire'
+  }
   state = {
     currentQuestion: 0,
     answeredQuestions: []
@@ -41,6 +44,7 @@ class QuestionnaireScreen extends Component {
     } catch (error) {
       Alert(error)
     }
+    this.setState({currentQuestion: 0, answeredQuestions: []})
     this.props.dispatch(setAssessment(result))
     this.props.navigation.navigate('Result', {name: 'Results', jobs: result})
   }
@@ -50,15 +54,15 @@ class QuestionnaireScreen extends Component {
         <Text style={[styles.text, styles.verticleSpacing]}>{questions[this.state.currentQuestion]}</Text>
         <View>
           <AnswerButton
-            addStyle={styles.verticleSpacing}
+            style={styles.verticleSpacing}
             onPress={() => this.handleAnswerPressed(1)}
             title='Agree' />
           <AnswerButton
-            addStyle={styles.verticleSpacing}
+            style={styles.verticleSpacing}
             onPress={() => this.handleAnswerPressed(2)}
             title='Neutral' />
           <AnswerButton
-            addStyle={styles.verticleSpacing}
+            style={styles.verticleSpacing}
             onPress={() => this.handleAnswerPressed(3)}
             title='Disagree' />
         </View>

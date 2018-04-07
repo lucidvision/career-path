@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
-import { Picker, StyleSheet, Slider, Text, TextInput, View } from 'react-native'
-import { IconButton } from 'components'
+import { Picker, StyleSheet, Slider, Text, View } from 'react-native'
+import { Header, IconButton } from 'components'
 import { Feather } from '@expo/vector-icons'
 import { jobs } from 'data/jobs'
 import _ from 'lodash'
 
 class FilterScreen extends Component {
+  static navigationOptions = {
+    title: 'Filter'
+  }
   state = {
-    minSalary: 0,
-    maxSalary: 0,
+    minSalary: 10000,
+    maxSalary: 200000,
     education: 'Bachelors'
   }
   handleFilterPressed = () => {
@@ -34,7 +37,7 @@ class FilterScreen extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.verticleSpacing}>Minimum Salary</Text>
+        <Header style={styles.verticleSpacing} text='Minimum Salary' />
         <Slider
           maximumValue={100000}
           minimumValue={10000}
@@ -43,16 +46,16 @@ class FilterScreen extends Component {
           style={styles.slider}
           value={this.state.minSalary} />
         <Text style={styles.verticleSpacing}>{this.state.minSalary}</Text>
-        <Text style={styles.verticleSpacing}>Maximum Salary</Text>
+        <Header style={styles.verticleSpacing} text='Maximum Salary' />
         <Slider
-          maximumValue={100000}
+          maximumValue={200000}
           minimumValue={10000}
           onValueChange={maxSalary => this.setState({maxSalary})}
           step={1000}
           style={styles.slider}
           value={this.state.maxSalary} />
         <Text style={styles.verticleSpacing}>{this.state.maxSalary}</Text>
-        <Text>Education</Text>
+        <Header text='Education' />
         <Picker
           style={styles.picker}
           selectedValue={this.state.education}

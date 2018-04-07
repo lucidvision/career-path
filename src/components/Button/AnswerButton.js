@@ -3,25 +3,25 @@ import PropTypes from 'prop-types'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 AnswerButton.propTypes = {
-  addStyle: PropTypes.oneOfType([
+  onPress: PropTypes.func.isRequired,
+  style: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
     PropTypes.number
   ]),
-  title: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired
+  title: PropTypes.string.isRequired
 }
 
 AnswerButton.defaultProps = {
-  addStyle: {},
-  title: '',
-  onPress: () => {}
+  onPress: () => {},
+  style: {},
+  title: ''
 }
 
 export default function AnswerButton (props) {
-  const { addStyle, title, ...rest } = props
+  const { style, title, ...rest } = props
   return (
-    <TouchableOpacity style={[styles.button, addStyle]} {...rest}>
+    <TouchableOpacity style={[styles.button, style]} {...rest}>
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   )
