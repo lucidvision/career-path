@@ -4,17 +4,11 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 AnswerButton.propTypes = {
   onPress: PropTypes.func.isRequired,
-  style: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-    PropTypes.number
-  ]),
   title: PropTypes.string.isRequired
 }
 
 AnswerButton.defaultProps = {
   onPress: () => {},
-  style: {},
   title: ''
 }
 

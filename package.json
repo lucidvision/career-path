@@ -6,6 +6,7 @@
     "fuse.js": "^3.2.0",
     "prop-types": "^15.6.1",
     "react": "16.3.0-alpha.1",
+    "react-dom": "^16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz",
     "react-navigation": "^1.5.9",
     "react-redux": "^5.0.7",
@@ -13,14 +14,34 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "jest-expo": "^26.0.0",
+    "react-test-renderer": "^16.3.1",
     "remote-redux-devtools": "^0.5.12",
     "standard": "^11.0.1"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ]
+  },
+  "scripts": {
+    "test": "node_modules/.bin/jest"
   },
   "standard": {
     "parser": "babel-eslint",
     "globals": [
       "jest",
       "describe",
+      "it",
       "test",
       "expect",
       "beforeEach",
