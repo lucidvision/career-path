@@ -69,16 +69,31 @@ describe('SearchInput', () => {
     })
   })
 
+  describe('handleItemPressed', () => {
+    const mockOnItemPressed = jest.fn()
+    const component = createSearchInput({onItemPressed: mockOnItemPressed})
+    component.setState({text: 'Rainbow', results: [{name: 'Therapist'}]})
+    component.instance().handleItemPressed({name: 'Doctor'})
+
+    it('resets the state', () => {
+      expect(component.state()).toEqual({text: '', results: []})
+    })
+
+    it('calls the onItemPressed callback', () => {
+      expect(mockOnItemPressed).toHaveBeenCalled()
+    })
+  })
+
   describe('renderItem', () => {
     const renderItem = shallow(component.instance().renderItem({item: {name: 'Doctor'}}))
 
-    it('renders the search results row', () => {
+    it('returns the search result item', () => {
       expect(renderItem.find('Text').props().children).toBe('Doctor')
     })
   })
 
   describe('when typing into search input', () => {
-    it('displays the results list', done => {
+    it('displays the search results', () => {
       const component = createSearchInput({data})
       component.find('TextInput').props().onChangeText('Doc')
       setTimeout(() => {
@@ -88,7 +103,6 @@ describe('SearchInput', () => {
           educationRequired: 'MD',
           score: 2
         }])
-        done()
       }, 600)
     })
   })

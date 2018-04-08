@@ -25,5 +25,32 @@ exports[`SearchInput renders correctly 1`] = `
     }
     value=""
   />
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "flex": 1,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 50,
+      }
+    }
+  >
+    <FlatList
+      data={Array []}
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </View>
 </View>
 `;

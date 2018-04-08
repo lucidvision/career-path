@@ -52,13 +52,12 @@ class SearchInput extends Component {
           onChangeText={this.handleSearchChanged}
           style={styles.input}
           value={this.state.text} />
-        {this.state.results.length > 0 &&
-          <View style={styles.list}>
-            <FlatList
-              data={this.state.results}
-              keyExtractor={(item) => item.name}
-              renderItem={this.renderItem} />
-          </View>}
+        <View style={styles.list}>
+          <FlatList
+            data={this.state.results}
+            keyExtractor={(item) => item.name}
+            renderItem={this.renderItem} />
+        </View>
       </View>
     )
   }

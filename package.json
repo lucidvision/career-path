@@ -34,7 +34,9 @@
     ]
   },
   "scripts": {
-    "test": "node_modules/.bin/jest"
+    "coverage": "node_modules/.bin/jest --coverage",
+    "test": "node_modules/.bin/jest",
+    "update": "node_modules/.bin/jest --updateSnapshot"
   },
   "standard": {
     "parser": "babel-eslint",
