@@ -17,7 +17,11 @@ class SearchInput extends Component {
     this.debouncedSearch = _.debounce(this.handleItemSearch, 500)
   }
   handleItemSearch = () => {
-    const options = {keys: ['name']}
+    const options = {
+      keys: ['name'],
+      threshold: 0,
+      shouldSort: true
+    }
     const fuse = new Fuse(this.props.data, options)
     const results = fuse.search(this.state.text)
     this.setState({results})

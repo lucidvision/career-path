@@ -3,20 +3,10 @@ import PropTypes from 'prop-types'
 import { StyleSheet, Text } from 'react-native'
 
 Header.propTypes = {
-  style: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-    PropTypes.number
-  ]),
   text: PropTypes.string.isRequired
 }
 
 Header.defaultProps = {
-  addStyle: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-    PropTypes.number
-  ]),
   text: ''
 }
 

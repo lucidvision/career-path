@@ -18,7 +18,7 @@ const categories = [
       },
       {
         name: 'Therapist',
-        salary: '50000',
+        salary: 50000,
         educationRequired: 'Bachelors',
         score: 0
       }

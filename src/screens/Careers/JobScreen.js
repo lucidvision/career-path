@@ -14,7 +14,7 @@ class JobScreen extends Component {
       <View>
         <Text>{params.name}</Text>
         <Text>{`Salary: ${params.salary}`}</Text>
-        <Text>{`Education: ${params.education}`}</Text>
+        <Text>{`Education: ${params.educationRequired}`}</Text>
       </View>
     )
   }

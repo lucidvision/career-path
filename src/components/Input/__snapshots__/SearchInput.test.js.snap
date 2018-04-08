@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderColor": "#d6d7da",
+      "borderRadius": 4,
+      "borderWidth": 0.5,
+      "padding": 10,
+      "width": "100%",
+      "zIndex": 1,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Search"
+    style={
+      Object {
+        "fontSize": 20,
+      }
+    }
+    value=""
+  />
+</View>
+`;
