@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionnaireScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "textAlign": "center",
+        },
+        Object {
+          "marginBottom": 20,
+        },
+      ]
+    }
+  >
+    Do you like people?
+  </Text>
+  <View>
+    <AnswerButton
+      onPress={[Function]}
+      style={
+        Object {
+          "marginBottom": 20,
+        }
+      }
+      title="Agree"
+    />
+    <AnswerButton
+      onPress={[Function]}
+      style={
+        Object {
+          "marginBottom": 20,
+        }
+      }
+      title="Neutral"
+    />
+    <AnswerButton
+      onPress={[Function]}
+      style={
+        Object {
+          "marginBottom": 20,
+        }
+      }
+      title="Disagree"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      Questions Left: 
+      3
+    </Text>
+  </View>
+</View>
+`;

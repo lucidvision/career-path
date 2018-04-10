@@ -12,7 +12,7 @@ const questions = [
   'Do you like studying?'
 ]
 
-class QuestionnaireScreen extends Component {
+export class QuestionnaireScreen extends Component {
   static navigationOptions = {
     title: 'Questionnaire'
   }
