@@ -1,7 +1,6 @@
 import assessments, { setAssessment } from './assessments'
 
 describe('assessments', () => {
-
   describe('actions', () => {
     describe('setAssessment', () => {
       it('returns the action type and assessment', () => {

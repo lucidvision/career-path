@@ -6,7 +6,7 @@ import { IconButton } from 'components'
 import { setAssessment } from 'redux/assessments'
 import _ from 'lodash'
 
-class AssessmentScreen extends Component {
+export class AssessmentScreen extends Component {
   static navigationOptions = {
     title: 'Career Path'
   }
