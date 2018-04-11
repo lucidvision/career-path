@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CareersScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "space-around",
+      "padding": 10,
+    }
+  }
+>
+  <SearchInput
+    data={
+      Array [
+        Object {
+          "educationRequired": "MD",
+          "name": "Doctor",
+          "salary": 100000,
+          "score": 2,
+        },
+        Object {
+          "educationRequired": "Bachelors",
+          "name": "Nurse",
+          "salary": 50000,
+          "score": 1,
+        },
+        Object {
+          "educationRequired": "Bachelors",
+          "name": "Therapist",
+          "salary": 50000,
+          "score": 0,
+        },
+        Object {
+          "educationRequired": "High School",
+          "name": "Tour Guide",
+          "salary": 30000,
+          "score": 0,
+        },
+        Object {
+          "educationRequired": "Bachelors",
+          "name": "Agent",
+          "salary": 50000,
+          "score": 0,
+        },
+        Object {
+          "educationRequired": "Bachelors",
+          "name": "Hotel Manager",
+          "salary": 80000,
+          "score": 1,
+        },
+      ]
+    }
+    onItemPressed={[Function]}
+  />
+  <IconButton
+    onPress={[Function]}
+    title="Categories"
+  >
+    <Icon
+      allowFontScaling={false}
+      name="list"
+      size={25}
+    />
+  </IconButton>
+  <IconButton
+    onPress={[Function]}
+    title="Filter"
+  >
+    <Icon
+      allowFontScaling={false}
+      name="filter"
+      size={25}
+    />
+  </IconButton>
+</View>
+`;

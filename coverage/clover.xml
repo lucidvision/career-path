@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1523394682564" clover="3.2.0">
-  <project timestamp="1523394682565" name="All files">
-    <metrics statements="165" coveredstatements="42" conditionals="40" coveredconditionals="4" methods="36" coveredmethods="15" elements="241" coveredelements="61" complexity="0" loc="165" ncloc="165" packages="11" files="17" classes="17">
+<coverage generated="1523402462308" clover="3.2.0">
+  <project timestamp="1523402462308" name="All files">
+    <metrics statements="157" coveredstatements="63" conditionals="34" coveredconditionals="8" methods="38" coveredmethods="21" elements="229" coveredelements="92" complexity="0" loc="157" ncloc="157" packages="11" files="17" classes="17">
       <package name="src">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="setupTests.js" path="/Users/lucid/Dev2/career-path/src/setupTests.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="4" count="6" type="stmt"/>
+          <line num="4" count="7" type="stmt"/>
         </file>
       </package>
       <package name="src.components">
@@ -19,29 +19,29 @@
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
         <file name="AnswerButton.js" path="/Users/lucid/Dev2/career-path/src/components/Button/AnswerButton.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="10" count="3" type="stmt"/>
           <line num="16" count="3" type="stmt"/>
           <line num="17" count="3" type="stmt"/>
-          <line num="24" count="2" type="stmt"/>
+          <line num="24" count="3" type="stmt"/>
         </file>
         <file name="IconButton.js" path="/Users/lucid/Dev2/career-path/src/components/Button/IconButton.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="10" count="3" type="stmt"/>
           <line num="16" count="3" type="stmt"/>
           <line num="17" count="3" type="stmt"/>
-          <line num="28" count="2" type="stmt"/>
+          <line num="28" count="3" type="stmt"/>
         </file>
       </package>
       <package name="src.components.Header">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="Header.js" path="/Users/lucid/Dev2/career-path/src/components/Header/Header.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="9" count="2" type="stmt"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
           <line num="14" count="2" type="stmt"/>
-          <line num="21" count="2" type="stmt"/>
+          <line num="21" count="3" type="stmt"/>
         </file>
       </package>
       <package name="src.components.Input">
@@ -61,16 +61,15 @@
           <line num="42" count="0" type="stmt"/>
           <line num="48" count="10" type="stmt"/>
           <line num="58" count="0" type="stmt"/>
-          <line num="66" count="2" type="stmt"/>
+          <line num="66" count="3" type="stmt"/>
         </file>
       </package>
       <package name="src.data">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="jobs.js" path="/Users/lucid/Dev2/career-path/src/data/jobs.js">
-          <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-          <line num="1" count="0" type="stmt"/>
-          <line num="3" count="0" type="stmt"/>
-          <line num="52" count="0" type="stmt"/>
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="52" count="2" type="stmt"/>
         </file>
       </package>
       <package name="src.navigation">
@@ -99,9 +98,9 @@
         <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <file name="assessments.js" path="/Users/lucid/Dev2/career-path/src/redux/assessments.js">
           <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
-          <line num="1" count="2" type="stmt"/>
-          <line num="4" count="5" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
+          <line num="1" count="3" type="stmt"/>
+          <line num="4" count="7" type="stmt"/>
+          <line num="10" count="3" type="stmt"/>
           <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
           <line num="17" count="1" type="stmt"/>
           <line num="22" count="1" type="stmt"/>
@@ -121,7 +120,7 @@
         </file>
       </package>
       <package name="src.screens.Assessment">
-        <metrics statements="39" coveredstatements="9" conditionals="12" coveredconditionals="2" methods="10" coveredmethods="4"/>
+        <metrics statements="32" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="12" coveredmethods="9"/>
         <file name="AssessmentScreen.js" path="/Users/lucid/Dev2/career-path/src/screens/Assessment/AssessmentScreen.js">
           <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="4"/>
           <line num="14" count="5" type="stmt"/>
@@ -136,36 +135,29 @@
           <line num="59" count="0" type="stmt"/>
         </file>
         <file name="QuestionnaireScreen.js" path="/Users/lucid/Dev2/career-path/src/screens/Assessment/QuestionnaireScreen.js">
-          <metrics statements="29" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="5" coveredmethods="0"/>
-          <line num="1" count="0" type="stmt"/>
-          <line num="2" count="0" type="stmt"/>
-          <line num="3" count="0" type="stmt"/>
-          <line num="4" count="0" type="stmt"/>
-          <line num="5" count="0" type="stmt"/>
-          <line num="6" count="0" type="stmt"/>
-          <line num="7" count="0" type="stmt"/>
-          <line num="9" count="0" type="stmt"/>
-          <line num="24" count="0" type="stmt"/>
-          <line num="25" count="0" type="stmt"/>
-          <line num="26" count="0" type="stmt"/>
-          <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="31" count="0" type="stmt"/>
-          <line num="34" count="0" type="cond" truecount="0" falsecount="6"/>
-          <line num="35" count="0" type="stmt"/>
-          <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="37" count="0" type="stmt"/>
-          <line num="39" count="0" type="stmt"/>
-          <line num="41" count="0" type="stmt"/>
+          <metrics statements="22" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="5"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="24" count="2" type="stmt"/>
+          <line num="25" count="2" type="stmt"/>
+          <line num="26" count="2" type="stmt"/>
+          <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="35" count="1" type="stmt"/>
+          <line num="36" count="6" type="cond" truecount="2" falsecount="0"/>
+          <line num="37" count="3" type="stmt"/>
+          <line num="39" count="6" type="stmt"/>
+          <line num="41" count="1" type="stmt"/>
+          <line num="42" count="1" type="stmt"/>
+          <line num="43" count="1" type="stmt"/>
           <line num="45" count="0" type="stmt"/>
-          <line num="47" count="0" type="stmt"/>
-          <line num="48" count="0" type="stmt"/>
-          <line num="49" count="0" type="stmt"/>
-          <line num="51" count="0" type="stmt"/>
-          <line num="52" count="0" type="stmt"/>
-          <line num="58" count="0" type="stmt"/>
+          <line num="47" count="1" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+          <line num="49" count="1" type="stmt"/>
+          <line num="52" count="12" type="stmt"/>
+          <line num="58" count="2" type="stmt"/>
           <line num="62" count="0" type="stmt"/>
           <line num="66" count="0" type="stmt"/>
-          <line num="77" count="0" type="stmt"/>
+          <line num="77" count="1" type="stmt"/>
         </file>
       </package>
       <package name="src.screens.Careers">
