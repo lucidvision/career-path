@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { CareersListScreen } from './CareersListScreen'
+import CareersListScreen from './CareersListScreen'
 
 const createCareersListScreen = (override) => {
   const props = {
@@ -22,6 +22,14 @@ describe('CareersListScreen', () => {
 
   it('renders correctly', () => {
     expect(component).toMatchSnapshot()
+  })
+
+  describe('renderItem', () => {
+    const renderItem = shallow(component.instance().renderItem({item: {name: 'Doctor'}}))
+
+    it('returns the search result item', () => {
+      expect(renderItem.find('Text').props().children).toBe('Doctor')
+    })
   })
 
   describe('handleJobPressed', () => {

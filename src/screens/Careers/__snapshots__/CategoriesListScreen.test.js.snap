@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesListScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "jobs": Array [
+            Object {
+              "educationRequired": "MD",
+              "name": "Doctor",
+              "salary": 100000,
+              "score": 2,
+            },
+            Object {
+              "educationRequired": "Bachelors",
+              "name": "Nurse",
+              "salary": 50000,
+              "score": 1,
+            },
+            Object {
+              "educationRequired": "Bachelors",
+              "name": "Therapist",
+              "salary": 50000,
+              "score": 0,
+            },
+          ],
+          "name": "Medical",
+        },
+        Object {
+          "jobs": Array [
+            Object {
+              "educationRequired": "High School",
+              "name": "Tour Guide",
+              "salary": 30000,
+              "score": 0,
+            },
+            Object {
+              "educationRequired": "Bachelors",
+              "name": "Agent",
+              "salary": 50000,
+              "score": 0,
+            },
+            Object {
+              "educationRequired": "Bachelors",
+              "name": "Hotel Manager",
+              "salary": 80000,
+              "score": 1,
+            },
+          ],
+          "name": "Tourism",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</View>
+`;

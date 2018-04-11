@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 10,
+    }
+  }
+>
+  <Header
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+    text="Minimum Salary"
+  />
+  <Slider
+    disabled={false}
+    maximumValue={100000}
+    minimumValue={10000}
+    onValueChange={[Function]}
+    step={1000}
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+    value={10000}
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    10000
+  </Text>
+  <Header
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+    text="Maximum Salary"
+  />
+  <Slider
+    disabled={false}
+    maximumValue={200000}
+    minimumValue={10000}
+    onValueChange={[Function]}
+    step={1000}
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+    value={200000}
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "marginBottom": 20,
+      }
+    }
+  >
+    200000
+  </Text>
+  <Header
+    text="Education"
+  />
+  <Picker
+    mode="dialog"
+    onValueChange={[Function]}
+    selectedValue="Bachelors"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <PickerItem
+      label="High School"
+      value="High School"
+    />
+    <PickerItem
+      label="Bachelors"
+      value="Bachelors"
+    />
+    <PickerItem
+      label="Masters"
+      value="Masters"
+    />
+    <PickerItem
+      label="PhD"
+      value="PhD"
+    />
+  </Picker>
+  <IconButton
+    onPress={[Function]}
+    title="Filter"
+  >
+    <Icon
+      allowFontScaling={false}
+      name="filter"
+      size={25}
+    />
+  </IconButton>
+</View>
+`;
