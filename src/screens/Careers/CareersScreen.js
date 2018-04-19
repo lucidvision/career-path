@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Keyboard, StyleSheet, TouchableWithoutFeedback, View } from 'react-native'
 import { IconButton, SearchInput } from 'components'
 import { SimpleLineIcons, Feather } from '@expo/vector-icons'
 import { jobs } from 'data/jobs'
@@ -19,15 +19,17 @@ class Careers extends Component {
   }
   render () {
     return (
-      <View style={styles.container}>
-        <SearchInput data={jobs} onItemPressed={this.handleJobPressed} />
-        <IconButton onPress={this.handleCategoriesPressed} title='Categories'>
-          <SimpleLineIcons name='list' size={25} />
-        </IconButton>
-        <IconButton onPress={this.handleFilterPressed} title='Filter'>
-          <Feather name='filter' size={25} />
-        </IconButton>
-      </View>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <View style={styles.container}>
+          <SearchInput data={jobs} onItemPressed={this.handleJobPressed} />
+          <IconButton onPress={this.handleCategoriesPressed} title='Categories'>
+            <SimpleLineIcons name='list' size={25} />
+          </IconButton>
+          <IconButton onPress={this.handleFilterPressed} title='Filter'>
+            <Feather name='filter' size={25} />
+          </IconButton>
+        </View>
+      </TouchableWithoutFeedback>
     )
   }
 }
