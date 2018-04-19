@@ -6,7 +6,7 @@ import { jobs } from 'data/jobs'
 
 class Careers extends Component {
   handleCategoriesPressed = () => {
-    this.props.navigation.navigate('CategoriesList')
+    this.props.navigation.navigate('Categories')
   }
   handleFilterPressed = () => {
     this.props.navigation.navigate('Filter')

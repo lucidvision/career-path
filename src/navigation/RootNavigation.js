@@ -1,6 +1,7 @@
 import React from 'React'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons'
+import { BackButton } from 'components'
 import {
   AssessmentScreen,
   CategoriesListScreen,
@@ -11,17 +12,14 @@ import {
   QuestionnaireScreen
 } from 'screens'
 
-const CareersStack = StackNavigator({
-  Careers: {
-    screen: CareersScreen,
-    navigationOptions: {
-      title: 'Career Path'
-    }
-  },
+const CategoriesStack = StackNavigator({
   CategoriesList: {
     screen: CategoriesListScreen,
-    navigationOptions: {
-      title: 'Categories'
+    navigationOptions: ({ navigation }) => {
+      return {
+        title: 'Categories',
+        headerLeft: <BackButton onPress={() => navigation.goBack(null)} />
+      }
     }
   },
   CareersList: {
@@ -29,14 +27,9 @@ const CareersStack = StackNavigator({
     navigationOptions: ({ navigation }) => {
       const { params } = navigation.state
       return {
-        title: params.name
+        title: params.name,
+        headerLeft: <BackButton onPress={() => navigation.goBack()} />
       }
-    }
-  },
-  Filter: {
-    screen: FilterScreen,
-    navigationOptions: {
-      title: 'Filter'
     }
   },
   Job: {
@@ -44,8 +37,62 @@ const CareersStack = StackNavigator({
     navigationOptions: ({ navigation }) => {
       const { params } = navigation.state
       return {
-        title: params.name
+        title: params.name,
+        headerLeft: <BackButton onPress={() => navigation.goBack()} />
       }
+    }
+  }
+})
+
+const FilterStack = StackNavigator({
+  Filter: {
+    screen: FilterScreen,
+    navigationOptions: ({navigation}) => {
+      return {
+        title: 'Filter',
+        headerLeft: <BackButton onPress={() => navigation.goBack(null)} />
+      }
+    }
+  },
+  CareersList: {
+    screen: CareersListScreen,
+    navigationOptions: ({ navigation }) => {
+      const { params } = navigation.state
+      return {
+        title: params.name,
+        headerLeft: <BackButton onPress={() => navigation.goBack()} />
+      }
+    }
+  },
+  Job: {
+    screen: JobScreen,
+    navigationOptions: ({ navigation }) => {
+      const { params } = navigation.state
+      return {
+        title: params.name,
+        headerLeft: <BackButton onPress={() => navigation.goBack()} />
+      }
+    }
+  }
+})
+
+const CareersStack = StackNavigator({
+  Careers: {
+    screen: CareersScreen,
+    navigationOptions: {
+      title: 'Career Path'
+    }
+  },
+  Categories: {
+    screen: CategoriesStack,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Filter: {
+    screen: FilterStack,
+    navigationOptions: {
+      header: null
     }
   }
 })
@@ -59,8 +106,11 @@ const AssessmentStack = StackNavigator({
   },
   Questionnaire: {
     screen: QuestionnaireScreen,
-    navigationOptions: {
-      title: 'Questionnaire'
+    navigationOptions: ({navigation}) => {
+      return {
+        title: 'Questionnaire',
+        headerLeft: <BackButton onPress={() => navigation.goBack()} />
+      }
     }
   },
   Result: {
@@ -68,7 +118,18 @@ const AssessmentStack = StackNavigator({
     navigationOptions: ({ navigation }) => {
       const { params } = navigation.state
       return {
-        title: params.name
+        title: params.name,
+        headerLeft: <BackButton onPress={() => navigation.popToTop()} />
+      }
+    }
+  },
+  Job: {
+    screen: JobScreen,
+    navigationOptions: ({ navigation }) => {
+      const { params } = navigation.state
+      return {
+        title: params.name,
+        headerLeft: <BackButton onPress={() => navigation.goBack()} />
       }
     }
   }
