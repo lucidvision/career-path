@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 class CareersListScreen extends Component {
-  static navigationOptions = ({ navigation }) => {
-    const { params } = navigation.state
-    return {
-      title: params.name
-    }
-  }
   handleJobPressed = (job) => {
     this.props.navigation.navigate('Job', job)
   }

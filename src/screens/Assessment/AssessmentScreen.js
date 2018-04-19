@@ -7,9 +7,6 @@ import { setAssessment } from 'redux/assessments'
 import _ from 'lodash'
 
 export class AssessmentScreen extends Component {
-  static navigationOptions = {
-    title: 'Career Path'
-  }
   async componentDidMount () {
     try {
       const result = await AsyncStorage.getItem('assessmentResult')

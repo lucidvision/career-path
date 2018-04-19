@@ -3,9 +3,6 @@ import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native
 import jobs from 'data/jobs'
 
 class CategoriesListScreen extends Component {
-  static navigationOptions = {
-    title: 'Categories'
-  }
   handleCategoryPressed = (jobs) => {
     this.props.navigation.navigate('CareersList', jobs)
   }

@@ -13,31 +13,64 @@ import {
 
 const CareersStack = StackNavigator({
   Careers: {
-    screen: CareersScreen
+    screen: CareersScreen,
+    navigationOptions: {
+      title: 'Career Path'
+    }
   },
   CategoriesList: {
-    screen: CategoriesListScreen
+    screen: CategoriesListScreen,
+    navigationOptions: {
+      title: 'Categories'
+    }
   },
   CareersList: {
-    screen: CareersListScreen
+    screen: CareersListScreen,
+    navigationOptions: ({ navigation }) => {
+      const { params } = navigation.state
+      return {
+        title: params.name
+      }
+    }
   },
   Filter: {
-    screen: FilterScreen
+    screen: FilterScreen,
+    navigationOptions: {
+      title: 'Filter'
+    }
   },
   Job: {
-    screen: JobScreen
+    screen: JobScreen,
+    navigationOptions: ({ navigation }) => {
+      const { params } = navigation.state
+      return {
+        title: params.name
+      }
+    }
   }
 })
 
 const AssessmentStack = StackNavigator({
   Assessment: {
-    screen: AssessmentScreen
+    screen: AssessmentScreen,
+    navigationOptions: {
+      title: 'Career Path'
+    }
   },
   Questionnaire: {
-    screen: QuestionnaireScreen
+    screen: QuestionnaireScreen,
+    navigationOptions: {
+      title: 'Questionnaire'
+    }
   },
   Result: {
-    screen: CareersListScreen
+    screen: CareersListScreen,
+    navigationOptions: ({ navigation }) => {
+      const { params } = navigation.state
+      return {
+        title: params.name
+      }
+    }
   }
 })
 

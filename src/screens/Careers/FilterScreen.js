@@ -6,9 +6,6 @@ import { jobs } from 'data/jobs'
 import _ from 'lodash'
 
 class FilterScreen extends Component {
-  static navigationOptions = {
-    title: 'Filter'
-  }
   state = {
     minSalary: 10000,
     maxSalary: 200000,

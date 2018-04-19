@@ -13,9 +13,6 @@ const questions = [
 ]
 
 export class QuestionnaireScreen extends Component {
-  static navigationOptions = {
-    title: 'Questionnaire'
-  }
   state = {
     currentQuestion: 0,
     answeredQuestions: []

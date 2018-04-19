@@ -5,9 +5,6 @@ import { SimpleLineIcons, Feather } from '@expo/vector-icons'
 import { jobs } from 'data/jobs'
 
 class Careers extends Component {
-  static navigationOptions = {
-    title: 'Career Path'
-  }
   handleCategoriesPressed = () => {
     this.props.navigation.navigate('CategoriesList')
   }
