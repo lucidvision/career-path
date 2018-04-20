@@ -12,69 +12,79 @@ import {
   QuestionnaireScreen
 } from 'screens'
 
-const CategoriesStack = StackNavigator({
-  CategoriesList: {
-    screen: CategoriesListScreen,
-    navigationOptions: ({ navigation }) => {
-      return {
-        title: 'Categories',
-        headerLeft: <BackButton onPress={() => navigation.goBack(null)} />
+const CategoriesStack = StackNavigator(
+  {
+    CategoriesList: {
+      screen: CategoriesListScreen,
+      navigationOptions: ({ navigation }) => {
+        return {
+          title: 'Categories',
+          headerLeft: <BackButton onPress={() => navigation.goBack(null)} />
+        }
+      }
+    },
+    CareersList: {
+      screen: CareersListScreen,
+      navigationOptions: ({ navigation }) => {
+        const { params } = navigation.state
+        return {
+          title: params.name,
+          headerLeft: <BackButton onPress={() => navigation.goBack()} />
+        }
+      }
+    },
+    Job: {
+      screen: JobScreen,
+      navigationOptions: ({ navigation }) => {
+        const { params } = navigation.state
+        return {
+          title: params.name,
+          headerLeft: <BackButton onPress={() => navigation.goBack()} />
+        }
       }
     }
   },
-  CareersList: {
-    screen: CareersListScreen,
-    navigationOptions: ({ navigation }) => {
-      const { params } = navigation.state
-      return {
-        title: params.name,
-        headerLeft: <BackButton onPress={() => navigation.goBack()} />
-      }
-    }
-  },
-  Job: {
-    screen: JobScreen,
-    navigationOptions: ({ navigation }) => {
-      const { params } = navigation.state
-      return {
-        title: params.name,
-        headerLeft: <BackButton onPress={() => navigation.goBack()} />
-      }
-    }
+  {
+    headerMode: 'none'
   }
-})
+)
 
-const FilterStack = StackNavigator({
-  Filter: {
-    screen: FilterScreen,
-    navigationOptions: ({navigation}) => {
-      return {
-        title: 'Filter',
-        headerLeft: <BackButton onPress={() => navigation.goBack(null)} />
+const FilterStack = StackNavigator(
+  {
+    Filter: {
+      screen: FilterScreen,
+      navigationOptions: ({navigation}) => {
+        return {
+          title: 'Filter',
+          headerLeft: <BackButton onPress={() => navigation.goBack(null)} />
+        }
+      }
+    },
+    CareersList: {
+      screen: CareersListScreen,
+      navigationOptions: ({ navigation }) => {
+        const { params } = navigation.state
+        return {
+          title: params.name,
+          headerLeft: <BackButton onPress={() => navigation.goBack()} />
+        }
+      }
+    },
+    Job: {
+      screen: JobScreen,
+      navigationOptions: ({ navigation }) => {
+        const { params } = navigation.state
+        return {
+          title: params.name,
+          headerLeft: <BackButton onPress={() => navigation.goBack()} />
+        }
       }
     }
   },
-  CareersList: {
-    screen: CareersListScreen,
-    navigationOptions: ({ navigation }) => {
-      const { params } = navigation.state
-      return {
-        title: params.name,
-        headerLeft: <BackButton onPress={() => navigation.goBack()} />
-      }
-    }
-  },
-  Job: {
-    screen: JobScreen,
-    navigationOptions: ({ navigation }) => {
-      const { params } = navigation.state
-      return {
-        title: params.name,
-        headerLeft: <BackButton onPress={() => navigation.goBack()} />
-      }
-    }
+  {
+    headerMode: 'none'
   }
-})
+)
 
 const CareersStack = StackNavigator({
   Careers: {
@@ -84,16 +94,10 @@ const CareersStack = StackNavigator({
     }
   },
   Categories: {
-    screen: CategoriesStack,
-    navigationOptions: {
-      header: null
-    }
+    screen: CategoriesStack
   },
   Filter: {
-    screen: FilterStack,
-    navigationOptions: {
-      header: null
-    }
+    screen: FilterStack
   }
 })
 
