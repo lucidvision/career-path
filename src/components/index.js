@@ -4,6 +4,7 @@ import Header from './Header/Header'
 import IconButton from './Button/IconButton'
 import ListItem from './List/ListItem'
 import SearchInput from './Input/SearchInput'
+import Separator from './List/Separator'
 
 export {
   AnswerButton,
@@ -11,5 +12,6 @@ export {
   Header,
   IconButton,
   ListItem,
-  SearchInput
+  SearchInput,
+  Separator
 }

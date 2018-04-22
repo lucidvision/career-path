@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
-import { ListItem } from 'components'
+import { ListItem, Separator } from 'components'
 import jobs from 'data/jobs'
 
 class CategoriesListScreen extends Component {
@@ -18,7 +18,8 @@ class CategoriesListScreen extends Component {
         <FlatList
           data={jobs}
           renderItem={this.renderItem}
-          keyExtractor={(item) => item.name} />
+          keyExtractor={(item) => item.name}
+          ItemSeparatorComponent={Separator} />
       </View>
     )
   }

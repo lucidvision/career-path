@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
-import { ListItem } from 'components'
+import { ListItem, Separator } from 'components'
 
 class CareersListScreen extends Component {
   handleJobPressed = (job) => {
@@ -17,7 +17,8 @@ class CareersListScreen extends Component {
         <FlatList
           data={this.props.navigation.state.params.jobs}
           renderItem={this.renderItem}
-          keyExtractor={(item) => item.name} />
+          keyExtractor={(item) => item.name}
+          ItemSeparatorComponent={Separator} />
       </View>
     )
   }

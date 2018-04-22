@@ -51,6 +51,7 @@ class SearchInput extends Component {
           placeholder='Search'
           onChangeText={this.handleSearchChanged}
           style={styles.input}
+          underlineColorAndroid='transparent'
           value={this.state.text} />
         <View style={styles.list}>
           <FlatList
