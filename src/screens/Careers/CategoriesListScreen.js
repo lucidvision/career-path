@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
+import { ListItem } from 'components'
 import jobs from 'data/jobs'
 
 class CategoriesListScreen extends Component {
@@ -8,11 +9,7 @@ class CategoriesListScreen extends Component {
   }
   renderItem = ({item}) => {
     return (
-      <TouchableOpacity onPress={() => this.handleCategoryPressed(item)}>
-        <View style={styles.item}>
-          <Text>{item.name}</Text>
-        </View>
-      </TouchableOpacity>
+      <ListItem item={item} onItemPressed={this.handleCategoryPressed} />
     )
   }
   render () {
@@ -30,12 +27,6 @@ class CategoriesListScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  item: {
-    backgroundColor: 'grey',
-    height: 100,
-    justifyContent: 'center',
-    padding: 10
   }
 })
 
