@@ -23,7 +23,7 @@ describe('CareersScreen', () => {
   describe('handleCategoriesPressed', () => {
     it('navigates to the categories list screen', () => {
       component.find('IconButton').at(0).props().onPress()
-      expect(navMock).toHaveBeenCalledWith('CategoriesList')
+      expect(navMock).toHaveBeenCalledWith('Categories')
     })
   })
 

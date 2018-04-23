@@ -23,6 +23,7 @@ exports[`SearchInput renders correctly 1`] = `
         "fontSize": 20,
       }
     }
+    underlineColorAndroid="transparent"
     value=""
   />
   <View

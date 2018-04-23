@@ -9,6 +9,7 @@ exports[`CategoriesListScreen renders correctly 1`] = `
   }
 >
   <FlatList
+    ItemSeparatorComponent={[Function]}
     data={
       Array [
         Object {

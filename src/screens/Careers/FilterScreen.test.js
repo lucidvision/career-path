@@ -46,8 +46,8 @@ describe('FilterScreen', () => {
   })
 
   describe('Min Salary', () => {
-    it('has a header for min salary', () => {
-      expect(component.find('Header').at(0).props().text).toBe('Minimum Salary')
+    it('has a heading for min salary', () => {
+      expect(component.find('Heading').at(0).props().text).toBe('Minimum Salary')
     })
 
     it('sets state for min salary using slider', () => {
@@ -62,8 +62,8 @@ describe('FilterScreen', () => {
   })
 
   describe('Max Salary', () => {
-    it('has a header for min salary', () => {
-      expect(component.find('Header').at(1).props().text).toBe('Maximum Salary')
+    it('has a heading for min salary', () => {
+      expect(component.find('Heading').at(1).props().text).toBe('Maximum Salary')
     })
 
     it('sets state for min salary using slider', () => {
@@ -78,8 +78,8 @@ describe('FilterScreen', () => {
   })
 
   describe('Education', () => {
-    it('has a header for education', () => {
-      expect(component.find('Header').at(2).props().text).toBe('Education')
+    it('has a heading for education', () => {
+      expect(component.find('Heading').at(2).props().text).toBe('Education')
     })
 
     it('sets state for education using picker', () => {

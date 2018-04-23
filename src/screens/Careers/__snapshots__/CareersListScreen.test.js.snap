@@ -9,6 +9,7 @@ exports[`CareersListScreen renders correctly 1`] = `
   }
 >
   <FlatList
+    ItemSeparatorComponent={[Function]}
     data=""
     disableVirtualization={false}
     horizontal={false}
