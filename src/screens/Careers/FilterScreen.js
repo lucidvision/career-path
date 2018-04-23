@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Picker, StyleSheet, Slider, Text, View } from 'react-native'
-import { Header, IconButton } from 'components'
+import { Heading, IconButton } from 'components'
 import { Feather } from '@expo/vector-icons'
 import { jobs } from 'data/jobs'
 import _ from 'lodash'
@@ -34,7 +34,7 @@ class FilterScreen extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <Header style={styles.verticleSpacing} text='Minimum Salary' />
+        <Heading style={styles.verticleSpacing} text='Minimum Salary' />
         <Slider
           maximumValue={100000}
           minimumValue={10000}
@@ -43,7 +43,7 @@ class FilterScreen extends Component {
           style={styles.slider}
           value={this.state.minSalary} />
         <Text style={styles.verticleSpacing}>{this.state.minSalary}</Text>
-        <Header style={styles.verticleSpacing} text='Maximum Salary' />
+        <Heading style={styles.verticleSpacing} text='Maximum Salary' />
         <Slider
           maximumValue={200000}
           minimumValue={10000}
@@ -52,7 +52,7 @@ class FilterScreen extends Component {
           style={styles.slider}
           value={this.state.maxSalary} />
         <Text style={styles.verticleSpacing}>{this.state.maxSalary}</Text>
-        <Header text='Education' />
+        <Heading text='Education' />
         <Picker
           style={styles.picker}
           selectedValue={this.state.education}

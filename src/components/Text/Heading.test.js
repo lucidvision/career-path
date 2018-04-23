@@ -1,25 +1,25 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Header from './Header'
+import Heading from './Heading'
 
-const createHeader = (override) => {
+const createHeading = (override) => {
   const props = {
     text: '',
     ...override
   }
 
-  return shallow(<Header {...props} />)
+  return shallow(<Heading {...props} />)
 }
 
-describe('Header', () => {
-  const component = createHeader()
+describe('Heading', () => {
+  const component = createHeading()
 
   it('renders correctly', () => {
     expect(component).toMatchSnapshot()
   })
 
   it('displays text', () => {
-    const component = createHeader({text: 'Rainbow'})
+    const component = createHeading({text: 'Rainbow'})
     expect(component.find('Text').props().children).toBe('Rainbow')
   })
 })

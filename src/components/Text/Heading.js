@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, Text } from 'react-native'
 
-Header.propTypes = {
+Heading.propTypes = {
   text: PropTypes.string.isRequired
 }
 
-Header.defaultProps = {
+Heading.defaultProps = {
   text: ''
 }
 
-export default function Header (props) {
+export default function Heading (props) {
   return (
     <Text style={[styles.text, props.style]}>
       {props.text}

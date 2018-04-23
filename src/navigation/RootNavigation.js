@@ -1,7 +1,7 @@
 import React from 'React'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons'
-import { BackButton } from 'components'
+import { BackButton, HeaderLogo } from 'components'
 import {
   AssessmentScreen,
   CategoriesListScreen,
@@ -90,7 +90,7 @@ const CareersStack = StackNavigator({
   Careers: {
     screen: CareersScreen,
     navigationOptions: {
-      title: 'Career Path'
+      headerTitle: <HeaderLogo />
     }
   },
   Categories: {
@@ -105,7 +105,7 @@ const AssessmentStack = StackNavigator({
   Assessment: {
     screen: AssessmentScreen,
     navigationOptions: {
-      title: 'Career Path'
+      headerTitle: <HeaderLogo />
     }
   },
   Questionnaire: {
@@ -155,6 +155,19 @@ const RootNavigation = TabNavigator(
     }
   },
   {
+    tabBarPosition: 'bottom',
+    tabBarOptions: {
+      showIcon: true,
+      activeTintColor: 'blue',
+      inactiveTintColor: '#999999',
+      style: {
+        paddingTop: 10,
+        backgroundColor: '#ffffff'
+      },
+      indicatorStyle: {
+        backgroundColor: 'white'
+      }
+    },
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state
