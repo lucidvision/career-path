@@ -1,6 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import SearchInput from './SearchInput'
+import React from "react"
+import { shallow } from "enzyme"
+import SearchInput from "./SearchInput"
 
 const data = [
   {
@@ -106,4 +106,21 @@ describe('SearchInput', () => {
       }, 600)
     })
   })
+})
+
+// @ponicode
+describe("componentDidMount", () => {
+    let inst
+
+    beforeEach(() => {
+        inst = new SearchInput.default()
+    })
+
+    test("0", () => {
+        let callFunction = () => {
+            inst.componentDidMount()
+        }
+    
+        expect(callFunction).not.toThrow()
+    })
 })
